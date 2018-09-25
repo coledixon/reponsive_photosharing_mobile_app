@@ -1,0 +1,80 @@
+
+<div class="row"><!-- Start Row (main) -->
+    <div class="small-3 columns"><!-- Start Left Side -->
+        <div class="row"><!-- Main Company Logo Area -->
+            <div class="small-12 columns">
+                <p>Main Company Logo will go in this spot</p>
+            </div>
+        </div><!-- End Main Company Logo Area -->
+        <div class="row"><!-- Main Navigation Section -->
+            <div class="small-12 columns">
+                <p>This will be a list of links that will take you around the different things you will need to do.
+                    Possibly list all the galleries here, as well as navigaton to get to pages to create a new
+                    album/gallery. And everything else.</p>
+            </div>
+        </div><!-- End Main Navigation Section -->
+    </div><!-- End Left Side -->
+<div class="small-9 columns"><!-- Start Right Side -->
+    <div class="row"><!-- Title or main branding area -->
+        <div class="small-12 columns text-center">
+            <h3>Currently Viewing: </h3>
+            <span>Album ID: {{{Id}}}</span>
+        </div>
+    </div>	<!-- End Title or main branding area -->
+    <div class="row"><!-- Action Navigation Bar -->
+        <div class="small-12 columns">
+            <div class="row" id="navBar">
+                <div class="small-12">
+                    <div class="contain-to-grid sticky">
+                        <nav class="top-bar" data-topbar role="navigation">
+                            <section class="top-bar-section">
+                                <ul class="left">
+                                    <li>This is the actions navigation bar. Different pages will have different main actions.</li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Action Navigation Bar -->
+    <p>&nbsp;</p>
+    <div class="row" ><!-- Main page content-->
+
+    <div class="row" id="detailView">
+        <h3>All Images</h3>
+
+            <ul class="small-block-grid-1 large-block-grid-3">
+                <li>
+                    <div class="detailBlock">
+                        <form method="POST" action="">
+                            <p>Image Title</p>
+                            <input type="text" placeholder="title">
+                            <img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg">
+                            <p>Image Caption</p>
+                            <textarea placeholder="image caption or description"></textarea>
+                            <p>SEO Keywords</p>
+                            <textarea placeholder="SEO keyowrds / meta information"></textarea>
+                            <input type="submit" value="Save" class="button tiny radius imgSave">
+                            <input type="submit" value="Delete" class="button tiny radius imgDelete">
+                        </form>
+                    </div>
+                </li>
+
+            </ul>
+    </div><!-- End Row #detailView -->
+    <p>&nbsp;</p>
+</div><!-- end main column -->
+</div><!-- End Main page content -->
+
+
+</div><!-- End Right Side -->
+</div><!-- End Row (main) -->
+
+
+
+<script src="//cdn.jsdelivr.net/foundation/5.5.1/js/vendor/jquery.js"></script>
+<script src="//cdn.jsdelivr.net/foundation/5.5.1/js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>

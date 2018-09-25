@@ -1,0 +1,15 @@
+#logo {
+    background:black;
+    border:solid;
+    border-radius:0 10px 0 0;
+}
+
+#nav {
+    background-image:url(http://icdn5.digitaltrends.com/image/interchangeable-lenses-1000x592.jpg?ver=2);
+    border:solid;
+    border-radius: 0 0 10px 0;
+}
+
+.vcard {
+    background:black;
+}

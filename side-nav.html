@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side-Nav</title>
+
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.5.1/css/foundation.min.css' />
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.5.1/css/normalize.css' />
+    <script src='//cdn.jsdelivr.net/foundation/5.5.1/js/vendor/modernizr.js'></script>
+    <link rel="stylesheet" type="text/css" href="main-nav.css" />
+
+    <!-- Any custom CSS can probably go in the style.css that is already created. -->
+
+
+
+</head>
+<body>
+    <!-- Everything above here is just for making the foundation look okay while building the page. -->
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="row">
+                <!-- Start Left Side -->
+                <div class="small-3 columns">
+                    <div class="row">
+                        <br />
+                        <div class="show-for-medium-up">
+                            <div class="small-12 columns">
+                                <!-- Main Company Logo Area -->
+                                <div class="panel" id="logo">
+                                    <div class="row">
+                                        <div class="small-12 columns">
+                                            <p><img src="http://www.taggyapp.com/wp-content/uploads/2013/05/hello_world_desktop_1440x900_hd-wallpaper-989892-700x3021.jpg" alt="company logo" /></p>
+                                        </div>
+                                    </div>
+                                </div><!-- End Main Company Logo Area -->
+                                <div class="row" id="side-nav">
+                                    <!--START SIDE-NAV -->
+                                    <div class="small-12 columns">
+                                        <ul class="side-nav">
+                                            <div class="panel" id="nav">
+                                                <br />
+                                                <ul class="tiny stack button-group">
+                                                    <li><a href="#" class="button radius tiny">HOME</a></li>
+                                                    <li><a href="#" class="button radius tiny">PHOTOS</a></li>
+                                                    <li><a href="#" class="button radius tiny">ALBUMS</a></li>
+                                                    <li><a href="#" class="button radius tiny">DOWNLOAD APP</a></li>
+                                                </ul>
+                                                <br />
+                                                <li class="divider"></li></br>
+                                                <li class="divider"></li></br>
+                                                <li><button data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="responsive-button secondary tiny dropdown">ALBUMS</button></li>
+                                                <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+                                                    <li><a href="#">View Albums</a></li>
+                                                    <li>
+                                                        <a href="#" data-reveal-id="myModal">Create New</a>
+                                                        <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                                                            <div class="row">
+                                                                <div class="small-12 columns">
+                                                                    <br />
+                                                                    <div class="panel">
+                                                                        <div class="loginDiv">
+                                                                            <form method="POST" action="/CreateAlbum">
+                                                                                <h3><b>Name:</b></h3>
+                                                                                <input class="smallInput" type="text" name="name" placeholder="Album Name" required><br>
+                                                                                <h3><b>Description:</b></h3>
+                                                                                <input class="smallInput" type="text" name="Album Description" placeholder="Album Description"><br>
+                                                                                <h3><b>Tags:</b></h3>
+                                                                                <input class="smallInput" type="text" name="Tags" placeholder="Tags"><br>
+                                                                                <h3><b>Link:</b></h3>
+                                                                                <input class="smallInput" type="text" name="Link" placeholder="Http://www.example.com/"><br><br>
+                                                                                <input type="submit" value="Create Album" style="font-size: 16px;">
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-reveal-id="myModal2">Edit</a>
+                                                        <div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                                                            <div class="row">
+                                                                <div class="small-12 columns">
+                                                                    <br />
+                                                                    <div class="panel">
+                                                                        <div class="loginDiv">
+                                                                            <form method="POST" action="/EditAlbum">
+                                                                                <span>Album ID: {{{Id}}}</span>
+                                                                                <h3>Name:</h3>
+                                                                                <input type="hidden" name="id" value="{{Id}}"><br>
+                                                                                <input class="smallInput" type="text" name="name" value="{{name}}" placeholder="Album Name"><br>
+                                                                                <h3>Descriptions:</h3>
+                                                                                <input class="smallInput" type="text" name="Album Description" value="{{AlbumnDescription}}"><br>
+                                                                                <input class="smallInput" type="text" name="ogDescription" value="{{ogDescription}}"><br>
+                                                                                <input class="smallInput" type="text" name="Description" value="{{Description}}"><br>
+                                                                                <h3>Titles:</h3>
+                                                                                <input class="smallInput" type="text" name="ogTitle" value="{{ogTitle}}"><br>
+                                                                                <input class="smallInput" type="text" name="Title" value="{{Title}}"><br>
+                                                                                <h3>Link:</h3>
+                                                                                <input class="smallInput" type="text" name="Link" value="{{Link}}"><br><br>
+                                                                                <input type="submit" value="Save Album" style="font-size: 16px;">
+
+                                                                            </form>
+                                                                        </div>
+                                                                        <br />
+                                                                        <div class="IconDiv">
+                                                                            <form method="POST" action="/AddIcon/{{Id}}" enctype="multipart/form-data">
+                                                                                <span> Current Image:<a target="_blank" href="/{{cImg}}" style="color:#EEEEEE;">Link</a></span>
+                                                                                <h3>Album Image:</h3>
+                                                                                <input class="smallInput" type="file" name="img"><br><br>
+                                                                                <input type="submit" value="Save Image" style="font-size: 16px;">
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                                <li><button data-dropdown="drop2" aria-controls="drop1" aria-expanded="false" class="responsive-button secondary tiny dropdown">PHOTOS</button></li>
+                                                <ul id="drop2" data-dropdown-content class="f-dropdown" aria-hidden="true">
+                                                    <li><a href="#">View Photos</a></li>
+                                                    <li>
+                                                        <a href="#" data-reveal-id="myModal3">Upload</a>
+                                                        <div id="myModal3" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                                                            <div class="row">
+                                                                <div class="small-12 columns">
+                                                                    <br />
+                                                                    <div class="panel">
+                                                                        <div class="IconDiv">
+                                                                            <form method="POST" action="/AddIcon/{{Id}}" enctype="multipart/form-data">
+                                                                                <span> Current Image:<a target="_blank" href="/{{cImg}}" style="color:#EEEEEE;">Link</a></span>
+                                                                                <h3>Album Image:</h3>
+                                                                                <input class="smallInput" type="file" name="img"><br><br>
+                                                                                <a href="#" class="[tiny small medium large] [radius round] button split">Select Album <span data-dropdown="drop"></span></a><br>
+                                                                                <ul id="drop" class="f-dropdown" data-dropdown-content>
+                                                                                    <li><div value="{{name}}">Album 1</div></li>
+                                                                                    <li><a href="#">Album 2</a></li>
+                                                                                    <li><a href="#">Album 3r</a></li>
+                                                                                </ul>
+                                                                                <input type="submit" value="Save Image" style="font-size: 16px;">
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="#">Edit</a></li>
+                                                </ul>
+                                                <div class="show-for-large-up">
+                                                    </br>
+                                                    <ul class="vcard">
+                                                        <li class="fn"><font color="white">USERNAME</font></li>
+                                                        <li class="phone-number">PHONE NUMBER</li>
+                                                        <li class="locality">CITY</li>
+                                                        <li><span class="state">STATE</span>, <span class="zip">ZIP</span></li>
+                                                        <li class="website"><a href="#">website.com</a></li>
+                                                        <li class="email"><a href="#">name@email.com</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- END SIDE-NAV -->
+                    </div>
+                </div>
+</body>
+</html>
