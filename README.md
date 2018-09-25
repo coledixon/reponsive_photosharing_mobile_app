@@ -1,8 +1,7 @@
 # Foundations-CSS-with-Handlebars
-Side navigation and modals for a photo-sharing app project.
 
-This was a Live project I worked on for Tech Academy in Portland, OR.
-My team and I were tasked with designing a photo-sharing app for a client.
-We worked via MEAN stack utilizing Node.js, Foudations CSS, and Handlebars.
-My projects were to create a responsive side-navigation bar, a 'view galleries' page, and an 'edit galleries' page.
-I implemented these additional pages as modals within my side navigation bar to add functionality to the app.
+_modals built for team project
+_responsive mobile photo-sharing application
+_built with HTML5 / node.js / Handlesbars / Foundations / CSS3
+
+_part of LIVE PROJECT for Tech Academy (circa 2015)
